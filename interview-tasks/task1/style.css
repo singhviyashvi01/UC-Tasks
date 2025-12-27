@@ -1,0 +1,254 @@
+*{ 
+margin:0;
+padding:0; 
+box-sizing:border-box;
+font-family:'Times New Roman','Roboto','Poppins',sans-serif;
+color:#1B3C53;}
+.bgvideo{ 
+    position:fixed;
+    height:100%;
+    width:100%; 
+   z-index:-1;
+
+}
+/* NAVBAR */
+.navbar{ 
+    height:60px; 
+    width:100%;
+    background-color:#1B3C53;
+    color:#F9F3EF;
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center; 
+    position:fixed; 
+    top:0; 
+    z-index:1000;
+}
+.navthings{ 
+    display:flex; 
+   gap:25px;
+   align-items:center;
+   
+}
+.learnify-logo{ 
+    height:60px; 
+    width:150px;
+    background-image:url(learnify.png);
+    background-size:contain;
+}
+.navlink{ 
+    color:#F9F3EF;
+    text-decoration:none;
+    font-size:1.5rem;
+    transition:all 1s ease-out 0s;
+}
+ .navlink:hover{ 
+transform:scale(1.15);
+
+}
+
+button{ 
+    font-size:1.25rem; 
+border-radius:10px;
+padding:10px 20px;
+cursor: pointer;
+transition:all 0.3s normal 0s;
+text-align:center;
+width:100%;
+
+}
+button:hover{ 
+    background-color:rgb(234, 120, 139);
+}
+#signup{ 
+    margin-right:25px;
+}
+
+/* HOME */
+.home{ 
+    height:800px; 
+    width:100%;
+    display:flex; 
+    justify-content:space-evenly;
+    align-items:center;
+    margin-top:60px;
+
+}
+.study1{ 
+    display:flex; 
+    flex-direction:column;
+    height:350px; 
+    width:47%;
+    border: 5px solid #1B3C53; 
+    border-radius:20px;
+    padding:15px;
+}
+.study2{ 
+    display:flex; 
+    height:700px; 
+    width:47%;
+    flex-direction:column;
+    padding:15px;
+}
+.tagline{ 
+    font-size:2.8rem; 
+    font-weight:bolder; 
+    text-align:center;
+    margin-top:15px;
+    
+  
+}
+.subtext{ 
+    margin-top:15px;
+    font-size:1.8rem;
+    margin-bottom:25px;
+}
+/* courses */
+.courses{ 
+height:800px; 
+width:70%;
+display:flex; 
+flex-wrap:wrap;
+justify-content:space-evenly; 
+margin:15%;
+margin-top:2%;
+}
+.indvcourse{ 
+    display:flex;
+    height: 500px; 
+    width:500px; 
+    border: 5px solid #1B3C53; 
+    border-radius:20px;
+    margin:20px;
+    flex-direction:column;
+    padding:20px;
+}
+.courseimg{ 
+    border-radius:10px;
+    height:253px; 
+    width:450px;
+}
+/* Special features */
+li{ 
+    padding:10px; 
+    padding-left:2px;
+    font-size:2rem;
+}
+.special{ 
+    display:flex; 
+    margin:10%;
+    margin-top:40px;
+    border: 5px solid #1B3C53; 
+    border-radius:20px;
+  padding:50px;
+   gap:50px;
+}
+.imgfeat{ 
+    height:500px; 
+    width:700px; 
+    border-radius:5px;
+}
+/* Student feeback */
+.feedback{
+    display:flex; 
+    justify-content:space-evenly;
+    gap:15px;
+}
+.indvfeedback{ 
+height: 300px; 
+width:450px; 
+border: 5px solid #1B3C53; 
+    border-radius:20px;
+    display:flex; 
+    flex-direction:column;
+    padding:15px;
+    gap:30px;
+}
+.imname{ 
+display:flex; 
+gap:15px;
+}
+
+.stimage{ 
+    height:100px; 
+    width:100px; 
+    border-radius:50%;
+}
+.lines{ 
+    font-size:1.3rem;
+}
+/* footer */
+footer{ 
+
+    bottom:0px;
+    width:100%;
+    background-color:#1B3C53;
+    color:#F9F3EF;
+}
+.mainfooter{ 
+    display:flex;
+    padding:10px;
+    justify-content:space-between;
+    align-items:center;
+}
+.subfooter{ 
+    width:30%;
+    color:#F9F3EF;
+   
+}
+.footimage{ 
+    width:150px; 
+    height:50px;
+}
+/* login */
+.login{ 
+    height:460px; 
+    width:500px;
+    display:flex; 
+    flex-direction:column;
+   background-color:#F9F3EF;
+   color:#1B3C53;
+    position:absolute; 
+    top:20%; 
+    bottom:30%; 
+    left:40%; 
+    right:30%;
+    border:5px solid #1B3C53;
+    border-radius:5%;
+    padding:10px;
+    gap:30px;
+
+}
+.label{ 
+    font-size:2rem; 
+}
+input{ 
+    font-size:1.2rem;
+    padding:10px;
+    width:300px;
+}
+
+textarea {
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 300px;
+    height: 100px;
+    border-radius: 8px;
+
+}
+/* form */
+.application-form {
+    background-color: #F9F3EF;
+    color: #1B3C53;
+    border: 5px solid #1B3C53;
+    border-radius: 20px;
+    padding: 30px;
+    width: 700px;
+    height:800px;
+    font-size: 1.5rem;
+    margin: 65px auto;
+}
+select{ 
+    height:30px; 
+    width:150px;
+}

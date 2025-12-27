@@ -1,0 +1,73 @@
+*{ 
+  margin:0; 
+  padding:0; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background:url(bg.png);
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+  }
+  
+  .container {
+    background:#eee3e7;
+    padding: 30px;
+    border:3px solid rgb(245, 83, 83);
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color:black;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: rgb(15, 15, 156);
+  }
+  
+  .hint {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  .resultText {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .prev {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+.guessList {
+    padding: 0;
+  }
+
+  

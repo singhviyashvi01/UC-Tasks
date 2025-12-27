@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="Stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <video class="bgvideo" src="bg.mp4"   autoplay loop></video>
+    <!-- navbar -->
+   <div class="navbar"> 
+    <div class="learnify-logo"> </div>
+    <div class="navthings">
+    <a class="navlink" href="index.html"><i class="fa-solid fa-house"></i> 
+        Home</a>
+    <a class="navlink" href="contact.html">Contact</a>
+    <a href=login.html><button >Log in</button></a>
+    <a href=signup.html><button id="signup">Sign Up</button></a>
+</div></div> 
+
+<!-- FORM -->
+    <form class="application-form">
+        <p class="tagline">Course Application Form</p><br><br>
+      
+        <p class="label">Full Name:
+        <input type="text" id="name" placeholder="Enter your full name" required><br><br></p>
+      
+        <p class="label">Email:
+        <input type="email" id="email" placeholder="Enter your email" required><br><br></p>
+      
+        <p class="label">Phone Number:</p>
+        <input type="number" id="phone" placeholder="Enter phone number" required><br><br>
+      
+
+        <p class="label">Choose Course:</p>
+<select>
+          <option value="web">Web Development</option>
+          <option value="java">Java</option>
+          <option value="python">Python</option>
+          <option value="uiux">DSA</option>
+        </select><br><br>
+      
+        <p class="label">Date of Birth:</p>
+        <input type="date" id="dob"><br><br>
+    
+      
+        <p class="label">Payment via:</p>
+        <select>
+          <option value="upi">UPI</option>
+          <option value="credit">Credit Card</option>
+          <option value="debit">Debit Card</option>
+          <option value="netbanking">Net Banking</option>
+        </select><br><br>
+      
+
+        <button type="submit">Submit Application</button>
+      </form>
+      
+</body>
+</html>

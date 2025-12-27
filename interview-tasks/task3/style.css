@@ -1,0 +1,144 @@
+*{ 
+    margin:0;
+    padding:0; 
+    box-sizing:border-box; 
+    font-family:Arial,'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+body{ 
+    background-image:linear-gradient(#b9a185, #6b533c);
+    display:flex; 
+    flex-direction:column;
+    min-height:100vh;
+    justify-content:center;
+    align-items:center;
+}
+
+/* NAVBAR */
+.navbar{ 
+    width:100vw; 
+    height:10vh;
+    position:fixed; 
+    top:0; 
+    background-color:#0c0b07; 
+    z-index:10000;
+    color:white;
+    display:flex; 
+    justify-content:space-around;
+ align-items:center;
+
+
+}
+.logo{ 
+    width:10%; 
+    height:100%;}
+.optbutton{ 
+    display:flex; 
+    gap:0.5vw;
+    align-items:center; 
+    margin-right:1vw;
+}
+.optbutton button{ 
+    font-size:1.2rem;
+    width:10rem;
+    transition:all 0.3s normal;
+}
+button:hover{ 
+background-color:rgb(215, 110, 127);
+}
+.imghead{ 
+    display:flex; 
+    gap:0.5vw; 
+    align-items:center;
+}
+.heading{ 
+    font-size:3rem;
+}
+
+/* info */
+.info{
+    flex:1;
+    margin:11vh;
+    display:flex; 
+    flex-direction:column; 
+    gap:5vh;
+}
+.info img{ 
+    width:50vw;
+
+
+
+}
+.info h1{ 
+    font-size:3rem;
+}
+.divindv{ 
+    width:80vw;
+    border:0.3rem double #6b533c;
+    border-radius:4%;
+    background-color: #ccc1b3;
+    display:flex;
+    flex-direction:column;
+padding:2%;
+
+}
+.imgtitlediv img{ 
+    width:20%;
+    border-radius:0.3rem; 
+}
+.imgtitlediv{ 
+    width:100%; 
+    display:flex; 
+    gap:2vw;
+    align-items:center;
+    margin:1vh;
+    margin-bottom:2%;
+}
+.imgtitlediv h2{ 
+    font: size 1.5rem;
+}
+.newslink{
+    margin-top:1%;
+    font-size:1rem;
+}
+/* Footer */
+.footer{ 
+
+    width:100vw; 
+    height:30vh;
+    background-color:#0c0b07; 
+    bottom:0;
+display:flex; 
+justify-content:space-around;
+padding:2%;
+align-items:center;
+}
+.subfoot img{ 
+    width:30%; 
+}
+.subfoot{ 
+display:flex; 
+flex-direction:column;
+gap:1%;
+color:white;
+}
+.one{ 
+    width:50%;
+}
+.subfoot p{ 
+    font-size:0.75rem;
+}
+
+@media(max-width:850px){ 
+  html{ 
+    font-size:70%;
+  }
+  .navbar{ 
+    width:100vw; 
+    flex-direction:column;
+  }
+}
+
+
+
+
