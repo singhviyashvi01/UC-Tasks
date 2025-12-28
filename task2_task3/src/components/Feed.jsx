@@ -3,23 +3,34 @@ import usersData from '../data/users.json'
 import postsData from '../data/posts.json'
 import Navbar from './Navbar'
 import FullPost from './FullPost'
-
+import Cookies from 'js-cookie';
 
 
 
 const Feed = () => {
 
+const [user, setUser] = useState(null);
 const [users, setUsers] = useState([])
 const [posts, setPosts] = useState([])
 const [clicked, setClicked] = useState(null)
-
 useEffect(() => {
+  const fetchMe = async () => {
+    const token = Cookies.get("token");  
+    if (!token) return;  
 
-    setUsers(usersData)
-    setPosts(postsData)
-    console.log(posts)
+    const res = await fetch("https://task4-authdb.onrender.com/auth/me", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }, });
 
-}, [])
+    const data = await res.json();
+    setUser(data);
+  };
+
+  fetchMe();
+
+  setUsers(usersData);  
+  setPosts(postsData);  }, []);
 
 if(clicked){ 
   return(
