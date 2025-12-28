@@ -1,21 +1,29 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { loginUser } from "../api/auth";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";//instead of link using useNavigate
+
 
 const Login = () => {
 
+    const navigate = useNavigate();
 
 
-
-    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 
 
-const submitfn=(e)=>{
-e.preventDefault(); 
-console.log("form submitted")
-setUsername('')
-setPassword('')
-}
+const submitfn = async (e) => {
+    e.preventDefault();
+    const res = await loginUser({ email, password });
+    if (res.token) {
+      Cookies.set("token", res.token);
+      navigate("/feed");
+    } else {
+      alert( "Login failed");
+    }
+  };
 
   return (
     <div className='outerdiv transition'>
@@ -32,10 +40,10 @@ setPassword('')
 <div> 
 <input 
 type='text' 
-value={username}
-placeholder='Username' 
+value={email}
+placeholder='Email' 
 onChange={(e)=>{
-    setUsername(e.target.value)
+    setEmail(e.target.value)
     
 }}>
 </input>
@@ -54,7 +62,7 @@ placeholder='Password'
 
 <a href="#">Forgot Password?</a>
 
-<Link to='/feed'><button type='submit' class="signup">Login</button></Link>
+<button type='submit' class="signup">Login</button>
 </form>
     </div>
     <div className='innerdiv innerdiv2 h-20 text-white'>

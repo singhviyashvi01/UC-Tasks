@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { registerUser } from "../api/auth"; //backend
 import { useNavigate,Link } from 'react-router-dom'
 
 const Signup = () => {
@@ -14,6 +15,12 @@ const [username, setUsername] = useState('')
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const [cpassword, setCpassword] = useState('')
+const [name, setName] = useState('');
+const [city, setCity] = useState('');
+const [gender, setGender] = useState('');
+const [dob, setDob] = useState('');
+const [bio, setBio] = useState('');
+
 
 const [emailError, setemailError] = useState('')
 const [userError, setuserError] = useState('')
@@ -24,7 +31,7 @@ const [userValid, setuserValid] = useState('')
 const [passwordValid, setPasswordValid] = useState('')
 const [cPasswordValid, setCPasswordValid] = useState('')
 
-const submitfn=(e)=>{
+const submitfn=async (e)=>{
 e.preventDefault();
 let v=1;
 
@@ -56,14 +63,27 @@ if(password!=cpassword){
     v=0
 }
 
-if(v==1)
-{
-    setUsername('')
-    setPassword('')
-    setEmail('')
-    setCpassword('')
-    navigate('/feed')
+if (v === 1) {
+    const res = await registerUser({ //backend
+        username: username,
+        name: name,   
+        email: email,
+        password: password,
+        city: city,
+        gender: gender,
+        dob: dob,
+        bio: bio
+    });
+
+if (res.error) {
+        alert(res.error);
+        return;
+    }
+
+alert("Registered successfully!");
+    navigate("/login");
 }
+
 
 
 }
@@ -82,6 +102,63 @@ return (
         <p className='subheading'>Sign Up</p>
 <form onSubmit={(e)=>{submitfn(e)}}>
 
+
+<div className='divinput'>
+<input 
+  type="text" 
+  placeholder="Full Name"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+/>
+</div>
+<div className='divinput'>
+<input 
+  type="text"
+  placeholder="City"
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+/>
+</div>
+<div className='divinput'>
+<input 
+  type="text"
+  placeholder="Gender"
+  value={gender}
+  onChange={(e) => setGender(e.target.value)}
+/>
+</div>
+<div className='divinput'>
+<input 
+  type="date"
+  placeholder="DOB"
+  value={dob}
+  onChange={(e) => setDob(e.target.value)}
+/>
+</div>
+<div className='divinput'>
+<textarea
+  placeholder="Bio"
+  value={bio}
+  onChange={(e) => setBio(e.target.value)}
+></textarea>
+</div>
+<div className='divinput'>
+<input type='text' value={email} placeholder='Email'
+ onChange={(e)=>{
+    setEmail(e.target.value)
+    if(!emailRegex.test(e.target.value)){ 
+
+        setemailError('Invalid Email Format')
+        setemailValid('')
+    }
+    else{ 
+        setemailValid('Valid✅')
+        setemailError('')
+    }
+    }} />
+ <p className='error'>{emailError}</p>
+ <p className='valid'>{emailValid}</p>
+</div>
 <div className='divinput'>
 <input type='text' value={username} placeholder='Username'
  onChange={(e)=>{
@@ -101,24 +178,6 @@ return (
   <p className='valid'>{userValid}</p>
 
 </div>
-<div className='divinput'>
-<input type='text' value={email} placeholder='Email'
- onChange={(e)=>{
-    setEmail(e.target.value)
-    if(!emailRegex.test(e.target.value)){ 
-
-        setemailError('Invalid Email Format')
-        setemailValid('')
-    }
-    else{ 
-        setemailValid('Valid✅')
-        setemailError('')
-    }
-    }} />
- <p className='error'>{emailError}</p>
- <p className='valid'>{emailValid}</p>
-</div>
- 
 <div className='divinput'>
 <input type='Password' value={password} placeholder='Password'
  onChange={(e)=>{

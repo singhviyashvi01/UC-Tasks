@@ -1,20 +1,38 @@
-import React, { useState } from 'react'
-import users from '../data/users.json'
+import React, { useState,useEffect } from 'react'
+// import users from '../data/users.json'
 import allposts from '../data/posts.json'
 import Navbar from './Navbar'
 import FullPost from './FullPost'
+import Cookies from "js-cookie"
+
 
 const Profile = () => {
   
 const [clicked, setClicked] = useState(null)
 
-  const user=users[1]
-  const posts=allposts.filter(p=>p.user_id==user.user_id)
+const [user, setUser] = useState(null);
+
+const posts = user? allposts.filter(p => p.user_id === user.user_id): [];
 
   if (clicked) {
     
     return <FullPost post={clicked.post} user={clicked.user} />
   }
+
+  useEffect(() => {
+    const fetchMe = async () => {
+      const token = Cookies.get("token");
+  const res = await fetch(
+        "https://task4-authdb.onrender.com/auth/me",
+    { headers: {
+            Authorization: `Bearer ${token}`,  //
+          },
+        });
+const data = await res.json();
+      setUser(data);
+     }
+   fetchMe();}, []);
+  
 
   return (
     <div class="transition" >
@@ -22,7 +40,9 @@ const [clicked, setClicked] = useState(null)
       <div className="profile">
          <div className="p1">
 <div className="subp1"> 
-    <img src={users[1].avatar} className="profimg"></img>
+
+<img src={user?.avatar || "https://i.pravatar.cc/150"} className="profimg"/>
+
     <button className="edit">Edit Profile</button>
 </div>
 
@@ -39,12 +59,6 @@ const [clicked, setClicked] = useState(null)
     </div>
     <center><hr className="line profline"></hr></center>
     <div className="p2"> 
-      {/* <img className="profposts" src={prof1}></img>
-      <img className="profposts" src={prof2}></img>
-      <img className="profposts" src={prof3}></img>
-      <img  className="profposts" src={prof4}></img>
-      <img className="profposts" src={prof5}></img>
-      <img className="profposts" src={prof6}></img> */}
 
       {posts.map(post=>{
         return(

@@ -4,9 +4,9 @@ import Signup from './components/Signup'
 import { Route, Routes } from 'react-router-dom'
 import Landing from './components/Landing'
 import Feed from './components/Feed'
-import FullPost from './components/FullPost'
 import Discover from './components/Discover'
 import Profile from './components/Profile'
+import ProtectedRoute from './components/ProtectedRoute'
 
 
 
@@ -22,11 +22,28 @@ const App = () => {
   <Route path='/' element={<Landing/>}/>
   <Route path='/signup' element={<Signup/>}/> 
   <Route path='/login' element={<Login/>}/>
-  <Route path='/feed' element={<Feed/>}/>
-  <Route path='/fullpost' element={<FullPost/>}/>
-  <Route path='/discover' element={<Discover/>}/>
-  <Route path='/profile' element={<Profile/>}/>
-
+  <Route path="/feed" element={
+    <ProtectedRoute>
+      <Feed/>
+    </ProtectedRoute>
+  }
+/>
+<Route
+  path="/discover"
+  element={
+    <ProtectedRoute>
+      <Discover/>
+    </ProtectedRoute>
+  }
+/>
+<Route
+  path="/profile"
+  element={
+    <ProtectedRoute>
+      <Profile/>
+    </ProtectedRoute>
+  }
+/>
 </Routes>
 
 
