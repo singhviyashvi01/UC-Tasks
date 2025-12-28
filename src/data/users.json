@@ -1,0 +1,37 @@
+[
+  {
+    "user_id": 1,
+    "name": "Aanya Kapoor",
+    "username": "aanya_k",
+    "avatar": "/assets/user1.jpeg",
+    "bio": "Dog lover 🐾 | Always smiling"
+  },
+  {
+    "user_id": 2,
+    "name": "Ishita Rao",
+    "username": "ishitar",
+    "avatar": "/assets/user2.jpeg",
+    "bio": "Festival fanatic ✨ | Tea & chatter lover"
+  },
+  {
+    "user_id": 3,
+    "name": "Riya Kapoor",
+    "username": "riyakapoor",
+    "avatar": "/assets/user3.jpeg",
+    "bio": "Birthday cake enthusiast 🎂 | Life of the party"
+  },
+  {
+    "user_id": 4,
+    "name": "Rohan Mehta",
+    "username": "rohanm",
+    "avatar": "/assets/user4.jpeg",
+    "bio": "Carnival addict 🎡 | Adventure seeker"
+  },
+  {
+    "user_id": 5,
+    "name": "Kiara Mehta",
+    "username": "kiaramehta",
+    "avatar": "/assets/user5.jpeg",
+    "bio": "Fashion lover 💃 | Coffee & books ☕📖"
+  }
+]

@@ -1,0 +1,136 @@
+[
+  {
+    "id": 101,
+    "user_id": 1,
+    "image": "/assets/post1.jpeg",
+    "caption": "My favorite kind of therapy 🐶❤️",
+    "likes": 542,
+    "timestamp": "2 hours ago",
+    "comments": [
+      { "user": "kiaramehta", "text": "omg your dog is the cutest!! 😍" },
+      { "user": "rahulv", "text": "instant serotonin 🐾" },
+      { "user": "naina", "text": "literally mood 💖" }
+    ]
+  },
+  {
+    "id": 110,
+    "user_id": 2,
+    "image": "/assets/prof6.png",
+    "caption": "Smiles are contagious — spreading mine today 😊💫",
+    "likes": 732,
+    "timestamp": "10 hours ago",
+    "comments": [
+      { "user": "isha_mehta", "text": "keep smiling, it suits you 💕" },
+      { "user": "rahulv", "text": "that’s a million dollar smile 😄" },
+      { "user": "naina", "text": "this post made my day 🥰" },
+      { "user": "samirv", "text": "positivity personified ✨" },
+      { "user": "vihaanp", "text": "happy energy all over 😎" }
+    ]
+  },
+  {
+    "id": 102,
+    "user_id": 2,
+    "image": "/assets/post2.png",
+    "caption": "Diwali glow hits different✨",
+    "likes": 684,
+    "timestamp": "5 hours ago",
+    "comments": [
+      { "user": "naina", "text": "you look STUNNING 😭🔥" },
+      { "user": "samirv", "text": "tradition + glam = perfection 💫" }
+    ]
+  },
+  {
+    "id": 103,
+    "user_id": 3,
+    "image": "/assets/post3.jpeg",
+    "caption": "Birthday Vibes🥳",
+    "likes": 721,
+    "timestamp": "15 minutes ago",
+    "comments": [
+      { "user": "aarav_23", "text": "happy birthday queen!! 🎉👑" },
+      { "user": "vihaanp", "text": "save me a slice 😋" },
+      { "user": "isha_mehta", "text": "you deserve the world 🫶" },
+      { "user": "tanuj", "text": "best day ever 🥳" }
+    ]
+  },
+  {
+    "id": 104,
+    "user_id": 4,
+    "image": "/assets/post4.jpeg",
+    "caption": "Lost in the carnival lights 🎡✨",
+    "likes": 489,
+    "timestamp": "30 minutes ago",
+    "comments": [
+      { "user": "ishitar", "text": "this looks so fun omg!! 🎠" },
+      { "user": "kiaramehta", "text": "major main character energy 😎" }
+    ]
+  },
+  {
+    "id": 108,
+    "user_id": 2,
+    "image": "/assets/prof4.jpeg",
+    "caption": "In my comfy kurti mood 🌼",
+    "likes": 590,
+    "timestamp": "6 hours ago",
+    "comments": [
+      { "user": "naina", "text": "this look is everything 😍" },
+      { "user": "kiaramehta", "text": "simplicity always wins 💫" },
+      { "user": "rahulv", "text": "so effortlessly pretty ✨" }
+    ]
+  },
+  {
+    "id": 105,
+    "user_id": 5,
+    "image": "/assets/post5.jpeg",
+    "caption": "Six yards of elegance 💫",
+    "likes": 633,
+    "timestamp": "2 hours ago",
+    "comments": [
+      { "user": "naina", "text": "you’re glowing omg 🔥" },
+      { "user": "rohanm", "text": "this saree look >>> everything ✨" },
+      { "user": "kiaramehta", "text": "drop the outfit details pls 😭" }
+    ]
+  },
+
+  {
+    "id": 106,
+    "user_id": 2,
+    "image": "/assets/prof1.png",
+    "caption": "All dressed up in my favorite kurti for a wedding 💐✨",
+    "likes": 702,
+    "timestamp": "1 hour ago",
+    "comments": [
+      { "user": "isha_mehta", "text": "the fit. the vibe. everything 🔥" },
+      { "user": "aarav_23", "text": "traditional slayyy 😍" },
+      { "user": "naina", "text": "wedding guest goals 🫶" },
+      { "user": "rahulv", "text": "elegant as always!" }
+    ]
+  },
+  {
+    "id": 107,
+    "user_id": 2,
+    "image": "/assets/prof2.jpeg",
+    "caption": "Golden hour just hits different ☀️🌸",
+    "likes": 815,
+    "timestamp": "3 hours ago",
+    "comments": [
+      { "user": "samirv", "text": "sunkissed perfection 🔥" },
+      { "user": "tanuj", "text": "how are you real 😭" }
+    ]
+  },
+  
+  {
+    "id": 109,
+    "user_id": 2,
+    "image": "/assets/prof5.png",
+    "caption": "Just car selfies and good vibes 🚗💖",
+    "likes": 654,
+    "timestamp": "8 hours ago",
+    "comments": [
+      { "user": "aarav_23", "text": "this pic radiates happiness 😁" },
+      { "user": "tanuj", "text": "sunshine in human form ☀️" },
+      { "user": "naina", "text": "you’re glowingggg 😍" }
+    ]
+  }
+ 
+]
