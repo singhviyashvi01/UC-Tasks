@@ -16,10 +16,8 @@ const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const [cpassword, setCpassword] = useState('')
 const [name, setName] = useState('');
-const [city, setCity] = useState('');
-const [gender, setGender] = useState('');
 const [dob, setDob] = useState('');
-const [bio, setBio] = useState('');
+
 
 
 const [emailError, setemailError] = useState('')
@@ -69,10 +67,7 @@ if (v === 1) {
         name: name,   
         email: email,
         password: password,
-        city: city,
-        gender: gender,
-        dob: dob,
-        bio: bio
+        
     });
 
 if (res.error) {
@@ -111,37 +106,10 @@ return (
   onChange={(e) => setName(e.target.value)}
 />
 </div>
-<div className='divinput'>
-<input 
-  type="text"
-  placeholder="City"
-  value={city}
-  onChange={(e) => setCity(e.target.value)}
-/>
-</div>
-<div className='divinput'>
-<input 
-  type="text"
-  placeholder="Gender"
-  value={gender}
-  onChange={(e) => setGender(e.target.value)}
-/>
-</div>
-<div className='divinput'>
-<input 
-  type="date"
-  placeholder="DOB"
-  value={dob}
-  onChange={(e) => setDob(e.target.value)}
-/>
-</div>
-<div className='divinput'>
-<textarea
-  placeholder="Bio"
-  value={bio}
-  onChange={(e) => setBio(e.target.value)}
-></textarea>
-</div>
+
+
+
+
 <div className='divinput'>
 <input type='text' value={email} placeholder='Email'
  onChange={(e)=>{

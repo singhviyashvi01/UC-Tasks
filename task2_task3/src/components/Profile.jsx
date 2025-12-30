@@ -13,25 +13,31 @@ const [clicked, setClicked] = useState(null)
 const [user, setUser] = useState(null);
 
 const posts = user? allposts.filter(p => p.user_id === user.user_id): [];
+useEffect(() => {
+  const fetchMe = async () => {
+
+
+    
+    const token = Cookies.get("token");
+if (!token) return;
+const res = await fetch(
+      "https://task4-authdb.onrender.com/auth/me",
+  { headers: {
+          Authorization: `Bearer ${token}`,  //
+        },
+      });
+const data = await res.json();
+    setUser(data);
+   }
+ fetchMe();}, []);
 
   if (clicked) {
     
     return <FullPost post={clicked.post} user={clicked.user} />
   }
 
-  useEffect(() => {
-    const fetchMe = async () => {
-      const token = Cookies.get("token");
-  const res = await fetch(
-        "https://task4-authdb.onrender.com/auth/me",
-    { headers: {
-            Authorization: `Bearer ${token}`,  //
-          },
-        });
-const data = await res.json();
-      setUser(data);
-     }
-   fetchMe();}, []);
+  if (!user) return null;
+
   
 
   return (
@@ -41,14 +47,13 @@ const data = await res.json();
          <div className="p1">
 <div className="subp1"> 
 
-<img src={user?.avatar || "https://i.pravatar.cc/150"} className="profimg"/>
+<img src={user.avatar } className="profimg"/>
 
     <button className="edit">Edit Profile</button>
 </div>
 
 <div className="sub2p1">
-    <p className="text-3xl font-bold">{user.name}</p>
-    <p className="text-xl">@{user.username}</p>
+    <p className="text-xl">@{user.name}</p>
     <p className="text-sm">{user.bio}</p>
     <div className="fpcount">
       <button className="edit fp">895 followers</button>
