@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { registerUser } from "../api/auth"; //backend
+import { registerUser } from "../api/auth"; 
 import { useNavigate,Link } from 'react-router-dom'
 
 const Signup = () => {
@@ -16,7 +16,6 @@ const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const [cpassword, setCpassword] = useState('')
 const [name, setName] = useState('');
-const [dob, setDob] = useState('');
 
 
 
@@ -62,7 +61,7 @@ if(password!=cpassword){
 }
 
 if (v === 1) {
-    const res = await registerUser({ //backend
+    const res = await registerUser({ //backendstuff
         username: username,
         name: name,   
         email: email,

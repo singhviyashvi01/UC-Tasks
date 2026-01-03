@@ -1,26 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
-import usersData from '../data/users.json'
+import Cookies from "js-cookie";
+
 
 const Discover = () => {
 
-const disPeople=usersData.filter(u=>u.user_id!=2)
+const [users, setUsers] = useState([]);
+useEffect(() => {
+  const fetchUsers = async () => {
+    const token = Cookies.get("token");
 
+    const res = await fetch(
+      "https://task4-authdb.onrender.com/auth/all",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+const data = await res.json();
+    setUsers(data.users);
+console.log("API response:", data);
+};
+fetchUsers();
+}, []);
+
+const disPeople=users
 
   return (
-    <div class="transition">
+    <div className="transition">
       <Navbar/>
       <div className="discover">
 <p className="text-3xl font-extrabold mb-5">People you may know🕵🏻‍♂️</p>
 <div className="discover2">
-{disPeople.map((frnd)=>{
+{disPeople.map((frnd,index)=>{
   return(
     <div className="box"> 
-  <img src={frnd.avatar} className="disimg"></img>
+  <img src={`/assets/user${(index % 5) + 1}.jpeg`}
+  className="disimg"/>
+
   <div className="disname"> 
     <div>
     <p className="font-bold">{frnd.name}</p>
-    <p className="text-lg">@{frnd.username}</p>
+    <p className="text-lg">@{frnd.name}</p>
     </div>
     <button className="edit follow">Follow</button>
   </div>

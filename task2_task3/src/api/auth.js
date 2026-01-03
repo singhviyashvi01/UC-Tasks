@@ -19,3 +19,37 @@ const res = await fetch(`${BASE}/register`, {
         });
         return res.json();
       }
+
+export async function fetchMe() {
+        const token = Cookies.get("token");
+   const res = await fetch(`${BASE}/me`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+      return res.json(); 
+      }
+
+      export async function getMe() {
+        const token = Cookies.get("token"); 
+        const res = await fetch(`${BASE}/me`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const data = await res.json();
+     return data.user;
+
+      }
+
+      export async function getAllUsers() {
+        const token = Cookies.get("token");
+        const res = await fetch(`${BASE}/all`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+      
+        const data = await res.json();
+        return data.users; 
+      }

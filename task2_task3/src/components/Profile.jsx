@@ -1,9 +1,9 @@
 import React, { useState,useEffect } from 'react'
-// import users from '../data/users.json'
 import allposts from '../data/posts.json'
 import Navbar from './Navbar'
 import FullPost from './FullPost'
 import Cookies from "js-cookie"
+import { fetchMe } from '../api/auth'
 
 
 const Profile = () => {
@@ -12,26 +12,21 @@ const [clicked, setClicked] = useState(null)
 
 const [user, setUser] = useState(null);
 
-const posts = user? allposts.filter(p => p.user_id === user.user_id): [];
+const posts = allposts;
+
 useEffect(() => {
-  const fetchMe = async () => {
-
-
+  const getUser = async () => {
+    const data = await fetchMe();
     
-    const token = Cookies.get("token");
-if (!token) return;
-const res = await fetch(
-      "https://task4-authdb.onrender.com/auth/me",
-  { headers: {
-          Authorization: `Bearer ${token}`,  //
-        },
-      });
-const data = await res.json();
-    setUser(data);
-   }
- fetchMe();}, []);
+    setUser(data); 
+  };
+  getUser();
+}, []);
 
-  if (clicked) {
+  
+
+
+if (clicked) {
     
     return <FullPost post={clicked.post} user={clicked.user} />
   }
@@ -41,13 +36,14 @@ const data = await res.json();
   
 
   return (
-    <div class="transition" >
+
+    <div className="transition" >
       <Navbar/>
       <div className="profile">
          <div className="p1">
 <div className="subp1"> 
 
-<img src={user.avatar } className="profimg"/>
+<img src="/assets/user2.jpeg" className="profimg"/>
 
     <button className="edit">Edit Profile</button>
 </div>
@@ -58,25 +54,18 @@ const data = await res.json();
     <div className="fpcount">
       <button className="edit fp">895 followers</button>
       <button className="edit fp">568 following</button>
-      <button className="edit fp">6 posts</button>
+      <button className="edit fp">10 posts</button>
     </div>
 </div>
     </div>
     <center><hr className="line profline"></hr></center>
-    <div className="p2"> 
-
-      {posts.map(post=>{
-        return(
-          <img className="profposts" src={post.image}
-          onClick={()=>{ setClicked({post,user})}}
-          />
-        )
-      }
-    )
-      }
-
-
-    </div>
+    <div className="p2">
+  {posts.map((post, index) => {
+    return (
+      <img key={index} className="profposts" src={post.image}
+        onClick={()=>setClicked({ post, user })} />
+      );})}
+</div>
     </div>
     </div>
     

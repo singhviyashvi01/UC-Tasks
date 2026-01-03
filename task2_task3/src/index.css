@@ -414,10 +414,14 @@ transform: scale(1.03);
 
  gap:2vh;
   border-radius:10%; 
-  width:60vw; 
+  width:70vw; 
   padding:10%;
   padding-top:5%;
   background-color: #e2c2f0;
+  position:absolute; 
+  top:5vh;
+  left:15vw;
+  min-height:100vh;
 
 }
 .discover2{ 

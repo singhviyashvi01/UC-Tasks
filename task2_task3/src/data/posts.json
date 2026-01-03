@@ -1,7 +1,7 @@
 [
   {
     "id": 101,
-    "user_id": 1,
+    "user_id": "695898438c93b05eaaa22ca9",
     "image": "/assets/post1.jpeg",
     "caption": "My favorite kind of therapy 🐶❤️",
     "likes": 542,
@@ -14,7 +14,7 @@
   },
   {
     "id": 110,
-    "user_id": 2,
+    "user_id": "69581ce9e10b3b60d09b2225",
     "image": "/assets/prof6.png",
     "caption": "Smiles are contagious — spreading mine today 😊💫",
     "likes": 732,
@@ -29,7 +29,7 @@
   },
   {
     "id": 102,
-    "user_id": 2,
+    "user_id": "69581ce9e10b3b60d09b2225",
     "image": "/assets/post2.png",
     "caption": "Diwali glow hits different✨",
     "likes": 684,
@@ -41,7 +41,7 @@
   },
   {
     "id": 103,
-    "user_id": 3,
+    "user_id": "695130a6e19beb0f6163aebf",
     "image": "/assets/post3.jpeg",
     "caption": "Birthday Vibes🥳",
     "likes": 721,
@@ -55,7 +55,7 @@
   },
   {
     "id": 104,
-    "user_id": 4,
+    "user_id": "6909db84831c617a3d8b27cc",
     "image": "/assets/post4.jpeg",
     "caption": "Lost in the carnival lights 🎡✨",
     "likes": 489,
@@ -67,7 +67,7 @@
   },
   {
     "id": 108,
-    "user_id": 2,
+    "user_id": "69581ce9e10b3b60d09b2225",
     "image": "/assets/prof4.jpeg",
     "caption": "In my comfy kurti mood 🌼",
     "likes": 590,
@@ -80,7 +80,7 @@
   },
   {
     "id": 105,
-    "user_id": 5,
+    "user_id": "69528555ea0e4086cb1f09c4",
     "image": "/assets/post5.jpeg",
     "caption": "Six yards of elegance 💫",
     "likes": 633,
@@ -94,7 +94,7 @@
 
   {
     "id": 106,
-    "user_id": 2,
+    "user_id": "69581ce9e10b3b60d09b2225",
     "image": "/assets/prof1.png",
     "caption": "All dressed up in my favorite kurti for a wedding 💐✨",
     "likes": 702,
@@ -108,7 +108,7 @@
   },
   {
     "id": 107,
-    "user_id": 2,
+    "user_id": "69581ce9e10b3b60d09b2225",
     "image": "/assets/prof2.jpeg",
     "caption": "Golden hour just hits different ☀️🌸",
     "likes": 815,
@@ -121,7 +121,7 @@
   
   {
     "id": 109,
-    "user_id": 2,
+    "user_id": "69581ce9e10b3b60d09b2225",
     "image": "/assets/prof5.png",
     "caption": "Just car selfies and good vibes 🚗💖",
     "likes": 654,

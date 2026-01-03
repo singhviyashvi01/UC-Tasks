@@ -2,15 +2,12 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { loginUser } from "../api/auth";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";//instead of link using useNavigate
-
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
     const navigate = useNavigate();
-
-
-    const [email, setEmail] = useState('')
+const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 
 

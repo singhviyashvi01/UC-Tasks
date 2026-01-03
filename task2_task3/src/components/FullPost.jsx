@@ -1,10 +1,20 @@
 import React from 'react'
 import Navbar from './Navbar'
+import user1 from '/assets/user1.jpeg';
+import user2 from '/assets/user2.jpeg';
+import user3 from '/assets/user3.jpeg';
+import user4 from '/assets/user4.jpeg';
+import user5 from '/assets/user5.jpeg';
 
 const FullPost = ({post,user}) => {
-
-
-
+    
+    const userAvatars = {
+        "695898438c93b05eaaa22ca9": user1,
+        "69581ce9e10b3b60d09b2225": user2,
+        "695130a6e19beb0f6163aebf": user3,
+        "6909db84831c617a3d8b27cc":user4,
+        "69528555ea0e4086cb1f09c4":user5,
+      }
 
   return (
 
@@ -15,8 +25,8 @@ const FullPost = ({post,user}) => {
  <div className="fullbox">
     
     <div className="userimgname"> 
-<img className="userImg" src={user.avatar}></img>
-<p className="fullusername">{user.username}</p>
+<img className="userImg" src={userAvatars[user._id]}></img>
+<p className="fullusername">@{user.name}</p>
 </div>
 
 <div className="post">
@@ -34,7 +44,7 @@ const FullPost = ({post,user}) => {
 <div className="utc">
 
 <div className="usertimecaption">
-<p className="text-lg font-extrabold">{user.username}</p>
+<p className="text-lg font-extrabold">{user.name}</p>
 <p>{post.caption}</p>
 </div>
 <p className="text-sm text-gray-400 pl-[3%]">{post.timestamp}</p>
