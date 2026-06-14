@@ -922,7 +922,16 @@ input {
 .follow:hover {
   background-color: #30247f;
   color: #ffdaee;
+}
 
+.following-btn {
+  background-color: #30247f !important;
+  color: #ffdaee !important;
+}
+
+.following-btn:hover {
+  background-color: #1a134a !important;
+  color: #ffdaee !important;
 }
 
 .fullpost {

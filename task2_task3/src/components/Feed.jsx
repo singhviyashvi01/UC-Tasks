@@ -20,6 +20,14 @@ const Feed = () => {
   const [posts, setPosts] = useState([]);
   const [clicked, setClicked] = useState(null);
   const [likedPosts, setLikedPosts] = useState(new Set());
+  const [followedUsers, setFollowedUsers] = useState({});
+
+  const toggleFollow = (id) => {
+    setFollowedUsers(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
 
   const loadPosts = () => {
     const storedPosts = localStorage.getItem("userPosts");
@@ -144,7 +152,12 @@ const Feed = () => {
                     <p className="suggestion-name">User {userIndex + 1}</p>
                     <p className="suggestion-handle">@user{userIndex + 1}</p>
                   </div>
-                  <button className="edit follow suggestion-follow">Follow</button>
+                  <button 
+                    className={`edit follow suggestion-follow ${followedUsers[su._id || index] ? 'following-btn' : ''}`}
+                    onClick={() => toggleFollow(su._id || index)}
+                  >
+                    {followedUsers[su._id || index] ? "Following" : "Follow"}
+                  </button>
                 </div>
               );
             })}
