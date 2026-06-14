@@ -3,13 +3,19 @@ import Cookies from "js-cookie";
 const BASE = "https://task4-authdb.onrender.com/auth";
 
 export async function registerUser(data) {
-const res = await fetch(`${BASE}/register`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body:JSON.stringify(data)
-    });
-    return res.json();
+  const res = await fetch(`${BASE}/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+  const json = await res.json();
+  if (!json.error) {
+    // Store username for profile display
+    localStorage.setItem("signupUsername", data.username || data.name || "");
+    localStorage.setItem("signupName", data.name || "");
   }
+  return json;
+}
 
   export async function loginUser(data) {
     const res = await fetch(`${BASE}/login`, {
@@ -17,7 +23,12 @@ const res = await fetch(`${BASE}/register`, {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)
         });
-        return res.json();
+        const json = await res.json();
+        if (json.token) {
+          // Store login details for profile page
+          localStorage.setItem("loginEmail", data.email);
+        }
+        return json;
       }
 
 export async function fetchMe() {

@@ -17,7 +17,7 @@ const App = () => {
 
 
   return (
-    <div className='h-screen w-screen flex items-center justify-center wave-bg wave'>
+    <div className='min-h-screen w-screen'>
 <Routes>
   <Route path='/' element={<Landing/>}/>
   <Route path='/signup' element={<Signup/>}/> 
